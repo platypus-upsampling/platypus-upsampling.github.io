@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+    <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PLATYPUS: Progressive Local Surface Estimator for Arbitrary-Scale Point Cloud Upsampling</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-PYVRSFMDRL');
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/custom.css">
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+    <script src="./static/js/custom.js"></script>
+</head>
+
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">PLATYPUS: Progressive Local Surface Estimator for Arbitrary-Scale Point Cloud Upsampling
+                            Density Mask</h1>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <sup></sup>
+                            </span>
+                            </span>
+                        </div>
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <!-- <span class="link-block">
+                                    <a href="https://youtu.be/OpqUmiLi478" class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-youtube"></i>
+                                        </span>
+                                        <span>Video</span>
+                                    </a>
+                                </span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3"></h2>
+                    <div class="content has-text-justified">
+                        <div class="image-container">
+                            <figure>
+                                <img src="assets/figure5.png" alt="Curvature Value" title="Curvature Value">
+                                <figcaption>Curvature Value: criterion that quantitatively define structurally complex regions</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+
+
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>3D point clouds are increasingly vital for applications like autonomous driving and robotics, yet the raw data captured by sensors often suffer from noise and sparsity, creating challenges for downstream tasks. Consequently, point cloud upsampling becomes essential for improving density and uniformity, with recent approaches showing promise by projecting randomly generated query points onto the underlying surface of sparse point clouds. However, these methods often result in outliers, non-uniformity, and difficulties in handling regions with high curvature and intricate structures. </p>
+                        <p>
+                            In this work, we address these challenges by introducing the Progressive Local Surface Estimator (PLSE), which more effectively captures local features in complex regions through a curvature-based sampling technique that selectively targets high-curvature areas. Additionally, we incorporate a curriculum learning strategy that leverages the curvature distribution within the point cloud to naturally assess the sample difficulty, enabling curriculum learning on point cloud data for the first time. The experimental results demonstrate that our approach significantly outperforms existing methods, achieving high-quality, dense point clouds with superior accuracy and detail.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Overall Pipeline: Projection-based Upsampling</h2>
+                    <div class="content has-text-justified">
+                        <div class="image-container">
+                            <figure>
+                                <img src="assets/overall_pipeline.png" alt="Overall Pipeline" title="Overall Pipeline">
+                                <figcaption>Overall Pipeline</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Progressive Local Surface Estimator (PLSE)</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            Curvature-based sampling explicitly selects points with relatively high curvature values from the sparse point cloud, progressively sampling point clouds of various sizes over multiple iterations. 
+                        </p>
+                        <br>
+                        <div class="image-container">
+                            <figure>
+                                <img src="assets/figure2.png" alt="Curvature-based Sampling" title="Curvature-based Sampling">
+                                <figcaption>Curvature-based Sampling</figcaption>
+                            </figure>
+                        </div>
+                        <br>
+                        <div class="image-container">
+                            <figure>
+                                <img src="assets/figure4 (1).png" alt="Pipeline of PLSE" title="Pipeline of PLSE">
+                                <figcaption>Pipeline of PLSE</figcaption>
+                            </figure>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Curriculum Learning with Global Curvature Value</h2>
+                    <div class="content has-text-justified">
+                        <div class="image-container">
+                            <figure>
+                                <img src="assets/figure3.png" alt="Sample’s Difficulty based on Global Curvature Value" title="Sample’s Difficulty based on Global Curvature Value">
+                                <figcaption>Sample’s Difficulty based on Global Curvature Value</figcaption>
+                            </figure>
+                        </div>
+                        <br>
+                        <p>
+                            We further enhance the learning process of PLSE by implementing a new curriculum learning strategy that calculates the difficulty of a point cloud based on the distribution of curvature values.
+                        </p>
+                        <p>
+                            If a point cloud has fewer complex structures—indicated by a curvature value distribution skewed toward lower values and a lower mean—we classify it as an easy sample from a learning perspective.
+                        </p>
+                        <p>
+                            Conversely, if the point cloud's curvature value distribution is skewed toward higher values, indicating more complex structures, it is classified as a hard sample.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Qualitative Results</h2>
+                    <div class="content has-text-justified">
+                        <div class="slider-container">
+                            <div class="slides-wrapper">
+                                <div class="slide">
+                                    <img src="/assets/pugan_result (2).png" alt="PU-GAN Results">
+                                    <div class="slide-info">
+                                        <div class="custom-description">PU-GAN</div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="slide">
+                                    <img src="/assets/pu1k_result.png" alt="PU1K Results">
+                                    <div class="slide-info">
+                                        <div class="custom-description">PU1K</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="prev">&#10094;</a>
+                            <a class="next">&#10095;</a>
+                        </div>
+
+                        <br>
+                        <br>
+                            
+                        <div class="image-container">
+                            <figure>
+                                <img src="assets/figure_all (1).png" alt="Visualization of upsampling results using synthetic datasets" title="Visualization of upsampling results using synthetic datasets">
+                                <figcaption>Visualization of upsampling results using synthetic datasets <br> Top row: PU-GAN dataset & Bottom row: PU1K dataset</figcaption>
+                            </figure>
+                        </div>
+
+                        <br>
+
+                        <div class="image-container">
+                            <figure>
+                                <img src="assets/KITTI (1).png" alt="Visualization of upsampling results using KITTI dataset." title="Visualization of upsampling results using KITTI dataset.">
+                                <figcaption>Visualization of upsampling results using KITTI dataset</figcaption>
+                            </figure>
+                        </div>
+
+                        <br>
+
+                        <div class="image-container">
+                            <figure>
+                                <img src="assets/scanobjectnn.png" alt="Visualization of upsampling results using ScanObjectNN dataset." title="Visualization of upsampling results using ScanObjectNN dataset.">
+                                <figcaption>Visualization of upsampling results using ScanObjectNN dataset</figcaption>
+                            </figure>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+                        <p>This website is licensed under a
+                            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
+                                Attribution-ShareAlike 4.0 International License</a>.
+                        </p>
+                        <p>This means you are free to borrow the
+                            <a href="https://github.com/nerfies/nerfies.github.io">source code</a>
+                            of this website, we just ask that you link back to this page in the footer. Please remember
+                            to remove the analytics code
+                            included in the header of the website which you do not want on your website.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
